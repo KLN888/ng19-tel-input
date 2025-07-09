@@ -1,0 +1,45 @@
+{
+  "name": "ng19-tel-input",
+  "version": "0.0.1",
+  "description": "An Angular wrapper for intl-tel-input library, updated for Angular 19",
+  "main": "ng19-tel-input.js",
+  "scripts": {
+    "start": "http-server -c-1 .",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "watch": "ng build --watch --configuration development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://https://github.com/KLN888/ng19-tel-input.git"
+  },
+  "keywords": [
+    "Angular",
+    "phone",
+    "tel",
+    "intl-tel-input",
+    "country"
+  ],
+  "author": "kallalakshminarayana888@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://https://github.com/KLN888/ng19-tel-input/issues"
+  },
+  "homepage": "https://https://github.com/KLN888/ng19-tel-input#readme",
+  "peerDependencies": {
+    "@angular/common": "^17.0.0 || ^18.0.0 || ^19.0.0",
+    "@angular/core": "^17.0.0 || ^18.0.0 || ^19.0.0",
+    "intl-tel-input": "^19.5.6"
+  },
+  "devDependencies": {
+    "@angular/cli": "^19.0.0",
+    "@angular/compiler-cli": "^19.0.0",
+    "@angular/compiler": "^19.0.0",
+    "@angular/core": "^19.0.0",
+    "@angular/common": "^19.0.0",
+    "rxjs": "^7.8.1",
+    "typescript": "^5.4.0",
+    "zone.js": "^0.14.2"
+  }
+}
