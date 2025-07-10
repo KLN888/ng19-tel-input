@@ -3,3 +3,4 @@
  */
 
 export * from './lib/ng19-intl-tel-input.directive';
+export * from './lib/ng19-intl-tel-input.module';
