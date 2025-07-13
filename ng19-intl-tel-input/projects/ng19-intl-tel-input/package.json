@@ -1,6 +1,6 @@
 {
   "name": "ng19-intl-tel-input",
-  "version": "1.0.2",
+  "version": "0.0.2",
   "description": "An Angular wrapper for intl-tel-input library, updated for Angular 19",
   "typings": "public-api.d.ts",
   "module": "fesm2022/ng19-tel-input.mjs",
