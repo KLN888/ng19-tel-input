@@ -1,8 +1,8 @@
 import { Directive, ElementRef, EventEmitter, HostListener, Inject, Input, OnInit, Output, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import intlTelInput from 'intl-tel-input';
 import 'intl-tel-input/build/css/intlTelInput.css';
 
-declare const window: any;
 const defaultUtilScript = 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.1/js/utils.js';
 
 @Directive({
@@ -28,7 +28,7 @@ export class ng19TelInput implements OnInit {
         ...this.ng19TelInputOptions,
         utilsScript: this.getUtilsScript(this.ng19TelInputOptions)
       };
-      this.ngTelInput = window.intlTelInput(this.el.nativeElement, {
+      this.ngTelInput = intlTelInput(this.el.nativeElement, {
         ...this.ng19TelInputOptions
       });
 
