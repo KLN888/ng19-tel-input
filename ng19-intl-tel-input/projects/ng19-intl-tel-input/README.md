@@ -2,7 +2,6 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
 
-<h1 align="center"> This repository is no longer maintained.</h1>
 
 # Angular 16+ wrapper for intl-tel-input
 

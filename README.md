@@ -1,5 +1,3 @@
-<h1 align="center"> This repository is no longer maintained.</h1>
-
 # Angular 16+ wrapper for intl-tel-input
 
 # Installation
