@@ -2,62 +2,78 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
 
-## Code scaffolding
+<h1 align="center"> This repository is no longer maintained.</h1>
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+# Angular 16+ wrapper for intl-tel-input
 
-```bash
-ng generate component component-name
+# Installation
+
+Run following command to install ng19-intl-tel-input
+
+```sh
+npm install ng19-intl-tel-input intl-tel-input --save
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+After install, you need to add **intlTelInput.css**, **intlTelInput.min.js**, **utils.js**.
 
-```bash
-ng generate --help
+In case of @angular/cli, add 2 files in your `angular.json`. 
+
+For example,
+
+- Include **intlTelInput.css** in "styles" at your `angular.json` file  :
+```
+  "styles": [
+    ...
+    "node_modules/intl-tel-input/build/css/intlTelInput.css",
+    ...
+  ]
 ```
 
-## Building
-
-To build the library, run:
-
-```bash
-ng build ng19-intl-tel-input
+- Include **intlTelInput.min.js**, **utils.js** in "scripts" at your `angular.json` file  :
+```
+  "scripts": [
+    ...
+    "node_modules/intl-tel-input/build/js/intlTelInput.min.js"
+    ...
+  ]
 ```
 
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
 
-### Publishing the Library
+Now add Ng19TelInputModule into your AppModule. For example,
 
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/ng19-intl-tel-input
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+```js
+import {Ng19TelInputModule} from 'ng19-intl-tel-input';
 ```
 
-## Running end-to-end tests
+Once done, we are ready to use this library.
 
-For end-to-end (e2e) testing, run:
+# How to use?
 
-```bash
-ng e2e
+In order to use this directive, you need to add "ng19TelInput" directive with "[ng19TelInputOptions]" options to your text field. For example,
+
+```html
+<input type="text"
+  ng19TelInput
+  [ng19TelInputOptions]="{initialCountry: 'in'}"
+  (hasError)="hasError($event)"
+  (ng19TelOutput)="getNumber($event)"
+  (intlTelInputObject)="telInputObject($event)"
+  (countryChange)="onCountryChange($event)" />
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+# Note
+**(intlTelInputObject)** returns **intl-tel-input** instance.
+By default this package get **utils.js** from below link:-
+https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.1/js/utils.js
+But you can also provide your utilsScript file by using below options:-
 
-## Additional Resources
+[ng19TelInputOptions]="{initialCountry: 'in', utilsScript: 'node_modules/intl-tel-input/build/js/utils.js'}"
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+# How to use this instance?
+You can use it perform any functionality that is available on intl-tel-input plugin. **For example**, in your component,
+```
+telInputObject(obj) {
+    console.log(obj);
+    obj.setCountry('in');
+  }
+```
